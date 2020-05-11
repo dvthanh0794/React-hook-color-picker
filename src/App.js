@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ColorWrapper from './ColorWrapper';
+import TextColor from './TextColor';
+
+const colors = ['red', 'blue', 'green', 'brown', 'violet']
 
 function App() {
+  const [textColor, setTextColor] = useState('red');
+
+  const handleClick = (color) => {
+    setTextColor(color)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ColorWrapper colors={colors} handleClick={handleClick} textColor={textColor}/>
+      <TextColor textColor={textColor}/>
     </div>
   );
 }
