@@ -6,6 +6,7 @@ function ColorItem({ color, handleClick, textColor }) {
   }, [handleClick, color]);
 
   const itemClass = textColor === color ? 'color-item active' : 'color-item';
+  
   return (
 	<div
 	  className={itemClass}
